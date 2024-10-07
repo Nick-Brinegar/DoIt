@@ -3,6 +3,8 @@ package com.main.taskmanager.controller;
 import com.main.taskmanager.models.Task;
 import com.main.taskmanager.repository.TaskRepository;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 import java.util.List;
 
@@ -10,13 +12,13 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
-    /* 
-    TaskController(TaskRepository repo){
-        this.taskRepository = repo;
+    @Autowired
+    public TaskController(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
     }
-        */
+        
     
 
     @GetMapping
