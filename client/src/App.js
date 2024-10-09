@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import TaskItem from './components/TaskItem';
+import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         </a>
       </header>
       <TaskForm/>
-      <TaskItem task={{name: "ooga"}}/>
+      <TaskList/>
     </div>
   );
 }
