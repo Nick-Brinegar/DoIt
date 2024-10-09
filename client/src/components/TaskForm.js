@@ -6,7 +6,7 @@ const TaskForm = () => {
     const toggle = () => setModal(!modal);
     return (
         <div>
-            <Button color="red" onClick={toggle}>
+            <Button color="danger" onClick={toggle}>
                     New Task
             </Button>
             <Modal isOpen={modal} toggle={toggle}>
@@ -17,7 +17,7 @@ const TaskForm = () => {
                     
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="blue" onClick={toggle}>
+                    <Button color="danger" onClick={toggle}>
                         Create Task
                     </Button>
                 </ModalFooter>
