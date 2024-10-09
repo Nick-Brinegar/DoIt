@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import TaskItem from './components/TaskItem';
+import TaskForm from './components/TaskForm';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <TaskForm/>
       <TaskItem task={{name: "ooga"}}/>
     </div>
   );
