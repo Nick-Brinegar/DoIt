@@ -10,7 +10,7 @@ start_server() {
 
 start_client() {
     echo "Starting client..."
-    cd ./client
+    cd ../client
     npm start &
     CLIENT_PID=$!
     echo "Client started with PID: $CLIENT_PID"
@@ -26,3 +26,9 @@ cleanup() {
     exit 0
 }
 
+trap cleanup SIGINT
+
+start_server
+start_client
+
+wait
