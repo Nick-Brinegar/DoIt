@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TaskList from './TaskList';  
 import TaskForm from './TaskForm';  
 import { getTasks } from '../api/tasks/getTasks';
+import './TaskManager.css';
 
 const TaskManager = () => {
     const [tasks, setTasks] = useState([]);  
@@ -33,11 +34,14 @@ const TaskManager = () => {
 
     return (
         <div className="task-manager">
-            <h1>Task Manager</h1>
-            
-            {error && <p style={{ color: 'red' }}>{error}</p>} 
-            <TaskForm addTask={addTask} />
-            <TaskList tasks={tasks} updateTask={updateTask}/>
+            <div className="task-header">
+                <h1>Task Manager</h1>
+                {error && <p style={{ color: 'red' }}>{error}</p>} 
+                <TaskForm addTask={addTask} />
+            </div>
+            <div className="task-list-container">
+                <TaskList tasks={tasks} updateTask={updateTask}/>
+            </div>
         </div>
     );
 };
