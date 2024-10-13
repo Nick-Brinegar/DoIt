@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:8081/tasks'
 
 const putTask = async (taskId) => {
-    var URL = API_URL + '/' + taskId;
+    var URL = `${API_URL}/${taskId}`;
     const response = await fetch(URL, {
         method: 'PUT',
         headers: {

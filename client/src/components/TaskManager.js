@@ -23,13 +23,21 @@ const TaskManager = () => {
         setTasks((prevTasks) => [...prevTasks, newTask]);  
     };
 
+    const updateTask = (updatedTask) => {
+        setTasks((prevTasks) =>
+            prevTasks.map(task =>
+                task.id === updatedTask.id ? updatedTask : task
+            )
+        );
+    };
+
     return (
         <div className="task-manager">
             <h1>Task Manager</h1>
             
             {error && <p style={{ color: 'red' }}>{error}</p>} 
             <TaskForm addTask={addTask} />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} updateTask={updateTask}/>
         </div>
     );
 };
