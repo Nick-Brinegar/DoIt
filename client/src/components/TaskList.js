@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { getTasks } from '../api/tasks/getTasks';
-import TaskItem from './TaskItem';
+import React from 'react';
+import TaskItem from './TaskItem'; 
 
-const TaskList = () => {
-    const [tasks, setTasks] = useState([]);
-    const [error, setError] = useState(null); 
-
-    useEffect(() => {
-        const fetchTasks = async () => {
-            try {
-                const taskList = await getTasks();
-                setTasks(taskList);  // Set the tasks in state
-            } catch (error) {
-                setError('Failed to fetch tasks.');
-            }
-        };
-
-        fetchTasks();
-    }, []); 
+const TaskList = ({ tasks }) => {
     return (
         <div>
-            {tasks.map(task => (
-                <TaskItem key={task._id} task={task} />
-            ))}
+            <ul>
+                {tasks.map((task) => (
+                    <TaskItem key={task._id} task={task} /> 
+                ))}
+            </ul>
         </div>
     );
 };

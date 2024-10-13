@@ -21,6 +21,7 @@ const TaskForm = ({ addTask }) => {
 
             try {
                 const newTask = await postTask(taskName); 
+                addTask(newTask);
                 setTaskName('');  
                 toggle();         
             } catch (error) {
