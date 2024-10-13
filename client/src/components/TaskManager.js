@@ -24,7 +24,7 @@ const TaskManager = () => {
     };
 
     return (
-        <div>
+        <div className="task-manager">
             <h1>Task Manager</h1>
             
             {error && <p style={{ color: 'red' }}>{error}</p>} 
