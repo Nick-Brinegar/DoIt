@@ -14,6 +14,7 @@ const TaskItem = ({ task }) => {
       <Input
         type="checkbox"
         onClick={handleCheckboxChange}
+        checked={task.completed}
       />
       <span>{task.name}</span>
     </div>
