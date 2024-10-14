@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Input } from 'reactstrap';
 import './TaskItem.css';
 import putTask from '../api/tasks/putTask';
+import { deleteTask } from '../api/tasks/deleteTask';
 
 const TaskItem = ({ task, updateTask }) => {
   const [isCompleted, setIsCompleted] = useState(task.completed);
