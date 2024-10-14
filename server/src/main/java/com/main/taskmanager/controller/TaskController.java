@@ -38,9 +38,10 @@ public class TaskController {
         Task updateTask = taskRepository.save(t);
         return ResponseEntity.ok(updateTask);
     }
-    
-    @GetMapping("/test")
-    public String testEndpoint() {
-        return "Server is running yo";
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteTask(@PathVariable String id) {
+        taskRepository.deleteById(id);
+        return ResponseEntity.ok().build();
     }
 }
